@@ -15,6 +15,8 @@ LPMCSR:
     Ack: [1, The valid LPM Token will be ACK / ACK answer]
 CHEP?R:
   _modify:
+    DTOG[RT]X:
+      access: read-write
     STAT[RT]X:
       access: read-write
   STATTX:
@@ -34,6 +36,9 @@ CHEP?R:
     _W1T:
       Keep: [0, Do not change bits]
   DTOGTX:
+    _read:
+      Send0: [0, The next data packet transmitted will have the data toggle bit set to 0.]
+      Send1: [1, The next data packet transmitted will have the data toggle bit set to 1.]
     _W1T:
       Toggle: [1, Flip bit]
   VTTX:
@@ -61,6 +66,9 @@ CHEP?R:
     _W1T:
       Keep: [0, Do not change bits]
   DTOGRX:
+    _read:
+      Expect0: [0, The next data packet received is expected to have the data toggle bit set to 0.]
+      Expect1: [1, The next data packet received is expected to have the data toggle bit set to 1.]
     _W1T:
       Toggle: [1, Flip bit]
   VTRX:

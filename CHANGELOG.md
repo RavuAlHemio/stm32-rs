@@ -42,6 +42,7 @@ Family-specific:
 * H5:
   * Update archive to v1.9
   * TIM: Add missing TIM12 peripheral to STM32H523
+  * USB: CHEPnR.DTOGRX and DTOGTX are now also readable (#1291)
 
 * H7:
   * Update archive to v2.8
